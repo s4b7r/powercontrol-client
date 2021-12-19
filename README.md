@@ -1,5 +1,7 @@
 # powercontrol-client
 
+See also [powercontrol-server](https://github.com/s4b7r/powercontrol-server). See server repo for architecture idea.
+
 ## Setup
 
 1. Create your `powercontrol-client.conf` from the example.
