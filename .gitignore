@@ -10,3 +10,5 @@ powercontrol-clientstate
 
 # Local History for Visual Studio Code
 .history/
+
+*.log
