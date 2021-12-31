@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source ./powercontrol-client.conf
 echo "powercontrol server: $powercontrol_server"
