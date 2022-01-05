@@ -2,8 +2,11 @@
 
 LOGTAG=powercontrol-client-reset
 
+cd $(dirname $(realpath $0))
+
 function logsetup {
-    exec 1> >(logger -p user.debug -t $LOGTAG) 2>&1
+    exec 1> >(tee -a $LOGTAG.log >(logger -p user.debug -t $LOGTAG) >/dev/null)
+    exec 2>&1
 }
 
 function log {
@@ -14,6 +17,6 @@ logsetup
 
 cd $(dirname $(realpath $0))
 
-log "Resetting client state."
+log "Resetting client state. $(date --rfc-3339=seconds)"
 [ -r powercontrol-clientstate ] || log "No state file present."
 [ -r powercontrol-clientstate ] && rm powercontrol-clientstate
