@@ -3,7 +3,7 @@
 LOGTAG=powercontrol-client-init
 
 function logsetup {
-    exec 1> >(logger -p user.info -t $LOGTAG) 2>&1
+    exec 1> >(logger -p user.debug -t $LOGTAG) 2>&1
 }
 
 function log {
@@ -11,6 +11,8 @@ function log {
 }
 
 logsetup
+
+cd $(dirname $(realpath $0))
 
 log "Checking configured client state"
 [ -r powercontrol-clientstate ] && log "State file already exists. Exiting."
