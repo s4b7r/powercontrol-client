@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
-LOGFILE=pwrctrl-client-statecheck.log
-# RETAIN_NUM_LINES=10
+LOGTAG=powercontrol-client-statecheck
 
 function logsetup {
-    # TMP=$(tail -n $RETAIN_NUM_LINES $LOGFILE 2>/dev/null) && echo "${TMP}" > $LOGFILE
-    exec > >(tee -a $LOGFILE)
-    exec 2>&1
+    exec 1> >(logger -p user.info -t $LOGTAG) 2>&1
 }
 
 function log {
-    echo "[$(date --rfc-3339=seconds)]: $*"
+    echo $*
 }
+
+logsetup
 
 log "Reading configuration"
 source ./powercontrol-client.conf
