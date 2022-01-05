@@ -15,8 +15,8 @@ function log {
 
 logsetup
 
-cd $(dirname $(realpath $0))
+date
 
-log "Resetting client state. $(date --rfc-3339=seconds)"
+log "Resetting client state. $(date)"
 [ -r powercontrol-clientstate ] || log "No state file present."
 [ -r powercontrol-clientstate ] && rm powercontrol-clientstate
