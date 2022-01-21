@@ -30,6 +30,6 @@ log "Client state: $clientstate"
 
 if [ $clientstate = "armed" ] && [ $powertimestate = "False" ]
 then
-    [ $debug = "True" ] || ( log "Auto shutdown now." & poweroff )
-    [ $debug = "True" ] && ( log "Auto shutdown in debug mode." & echo "poweroff" )
+    [ $debug = "True" ] || ( log "Auto shutdown now." & $poweroff_command )
+    [ $debug = "True" ] && ( log "Auto shutdown in debug mode." & echo "$poweroff_command" )
 fi

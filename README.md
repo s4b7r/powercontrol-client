@@ -5,6 +5,7 @@ See also [powercontrol-server](https://github.com/s4b7r/powercontrol-server). Se
 ## Setup
 
 1. Create your `powercontrol-client.conf` from the example.
+   1. `poweroff_command` is `poweroff` for FreeBSD and `systemctl poweroff` for Debian.
 2. Make scripts executable, e.g. `chmod +x *.sh`
 3. Configure `reset-clientstate.sh` to run on shutdown.
 4. Configure `initialize-clientstate.sh` to run after boot.
