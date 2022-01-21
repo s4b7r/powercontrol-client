@@ -1,0 +1,13 @@
+[Unit]
+Description=Run powercontrol client initialization at startup
+After=default.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/root/scripts/powercontrol-client/initialize-clienstate.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+

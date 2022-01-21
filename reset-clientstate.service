@@ -1,0 +1,13 @@
+[Unit]
+Description=Run powercontrol client reset at shutdown
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/scripts/powercontrol-client/reset-clientstate.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=shutdown.target reboot.target
+
